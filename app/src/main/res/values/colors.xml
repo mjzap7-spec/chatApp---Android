@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_color_light">#8E8E93</color>
+    <color name="text_color1_userlist">#AAAAAA</color>
+    <color name="text_color2_userlist">#777777</color>
+    <color name="text_color_detailinfo">#888888</color>
+    <color name="text_color_detailinfo1">#A8A8A8</color>
+    <color name="color_main_button">#0900DC</color>
+    <color name="app_black">#050505</color>
+    <color name="color_row">#242424</color>
+    <color name="user_row_normal">#151515</color>
+    <color name="text_color_input">#8E8E93</color>
+    <color name="light_gray">#B0B0B0</color>
+</resources>

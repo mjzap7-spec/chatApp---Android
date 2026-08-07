@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_bottom_text"><![CDATA[By creating an account, you confirm that you have read and agree to our Terms & Conditions, Privacy Policy, and Fair Use Policy.]]></string>
+    <string name="full_name">Full Name</string>
+    <string name="toSignup_text">Don\'t have an account? Sign up</string>
+    <string name="toSignIn_text">Already have an account? Sign in</string>
+</resources>

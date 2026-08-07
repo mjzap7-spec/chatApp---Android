@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:paddingHorizontal="20dp"
+    android:background="@drawable/bg_input_field">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#8E8E93"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/text_size_small"/>
+        <EditText
+            android:id="@+id/etInput"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
+            android:layout_marginBottom="8dp"
+            android:textSize="@dimen/text_size_normal"/>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnTogglePassword"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_visibility"
+        android:layout_gravity="center_vertical"
+        app:tint="#8E8E93"/>
+
+
+</LinearLayout>
