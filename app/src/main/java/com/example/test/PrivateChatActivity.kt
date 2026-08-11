@@ -248,9 +248,7 @@ class PrivateChatActivity : AppCompatActivity() {
                     if (messages.isNotEmpty()) {
                         binding
                             .privateMessageRecyclerView
-                            .scrollToPosition(
-                                messages.lastIndex
-                            )
+                            .scrollToPosition( messages.lastIndex )
                     }
                 }
     }

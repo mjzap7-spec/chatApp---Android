@@ -243,14 +243,11 @@ class CommunityActivity : AppCompatActivity() {
             contentResolver.getType(fileUri)
                 ?: "application/octet-stream"
 
-        val fileSize =
-            getFileSize(fileUri)
+        val fileSize = getFileSize(fileUri)
 
-        val storagePath =
-            "communityFiles/${firebaseUser.uid}/${System.currentTimeMillis()}_$fileName"
+        val storagePath = "communityFiles/${firebaseUser.uid}/${System.currentTimeMillis()}_$fileName"
 
-        val fileReference =
-            storage.reference.child(storagePath)
+        val fileReference = storage.reference.child(storagePath)
 
         binding.btnAttach.isEnabled = false
         binding.btnSend.isEnabled = false
@@ -258,31 +255,25 @@ class CommunityActivity : AppCompatActivity() {
         fileReference
             .putFile(fileUri)
             .continueWithTask { uploadTask ->
-
                 if (!uploadTask.isSuccessful) {
                     throw uploadTask.exception
                         ?: Exception("Upload failed")
                 }
-
                 fileReference.downloadUrl
             }
             .addOnSuccessListener { downloadUri ->
-
                 saveFileMessage(
                     fileName = fileName,
                     fileUrl = downloadUri.toString(),
                     mimeType = mimeType,
                     fileSize = fileSize
                 )
-
                 binding.btnAttach.isEnabled = true
                 binding.btnSend.isEnabled = true
             }
             .addOnFailureListener { exception ->
-
                 binding.btnAttach.isEnabled = true
                 binding.btnSend.isEnabled = true
-
                 showError(
                     exception.localizedMessage
                         ?: "Could not upload file"
@@ -313,7 +304,6 @@ class CommunityActivity : AppCompatActivity() {
                 result = cursor.getString(nameIndex)
             }
         }
-
         return result
     }
 
@@ -631,8 +621,7 @@ class CommunityActivity : AppCompatActivity() {
             .document(messageId)
             .delete()
             .addOnFailureListener {
-                showError("Could not delete message"
-                )
+                showError("Could not delete message")
             }
     }
 
@@ -741,8 +730,7 @@ class CommunityActivity : AppCompatActivity() {
                 R.id.btnAddFriend
             )
 
-        recyclerView.layoutManager =
-            LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         recyclerView.adapter = friendAdapter
 
@@ -773,8 +761,7 @@ class CommunityActivity : AppCompatActivity() {
         val input = EditText(this)
 
         input.hint = "Friend email"
-        input.inputType =
-            android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+        input.inputType = android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
 
         AlertDialog.Builder(this)
             .setTitle("Add friend")
@@ -817,19 +804,15 @@ class CommunityActivity : AppCompatActivity() {
         email: String,
         dialog: AlertDialog
     ) {
-        val currentUid =
-            auth.currentUser?.uid ?: return
+        val currentUid = auth.currentUser?.uid ?: return
 
-        val searchEmail =
-            email.trim().lowercase()
+        val searchEmail = email.trim().lowercase()
 
         firestore.collection("users")
             .get()
             .addOnSuccessListener { snapshot ->
-
                 val document =
                     snapshot.documents.firstOrNull {
-
                         val savedEmail =
                             it.getString("email")
                                 ?.trim()
