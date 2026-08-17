@@ -43,19 +43,19 @@
         </LinearLayout>
 
         <!-- Full Name Field -->
-        <com.example.test.CustomInputView
+        <com.example.test.ui.components.CustomInputView
             android:id="@+id/nameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"/>
         <!-- Email Field -->
-        <com.example.test.CustomInputView
+        <com.example.test.ui.components.CustomInputView
             android:id="@+id/emailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"/>
         <!-- Password Field -->
-        <com.example.test.CustomInputView
+        <com.example.test.ui.components.CustomInputView
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

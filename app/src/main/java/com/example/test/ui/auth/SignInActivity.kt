@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test.ui.manager.ManagerActivity
 import com.example.test.ui.user.UserListActivity
+import com.example.test.ui.components.CustomInputView
 import com.example.test.databinding.ActivitySignInBinding
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
