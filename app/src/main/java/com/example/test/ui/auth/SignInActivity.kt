@@ -1,9 +1,8 @@
-package com.example.test
+package com.example.test.ui.auth
 
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
@@ -11,6 +10,8 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.test.ui.manager.ManagerActivity
+import com.example.test.ui.user.UserListActivity
 import com.example.test.databinding.ActivitySignInBinding
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
@@ -65,7 +66,8 @@ class SignInActivity : AppCompatActivity() {
 
     private fun configureButtons(){
         binding.toSignup.setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java)
+            startActivity(
+                Intent(this, SignUpActivity::class.java)
             )
         }
 

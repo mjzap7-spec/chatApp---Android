@@ -1,4 +1,4 @@
-package com.example.test.model
+package com.example.test.data.model
 
 data class User(
     val uid: String = "",

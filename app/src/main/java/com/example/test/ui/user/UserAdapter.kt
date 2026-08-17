@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.test.ui.user
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test.databinding.ItemUserBinding
-import com.example.test.model.User
+import com.example.test.data.model.User
 
 class UserAdapter(
     private val currentUid: String,

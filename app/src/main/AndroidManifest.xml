@@ -25,31 +25,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".ui.auth.SignInActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".ui.components.CameraActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ui.auth.SignUpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".UserListActivity"
+            android:name=".ui.user.UserListActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ManagerActivity"
+            android:name=".ui.manager.ManagerActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".CommunityActivity"
+            android:name=".ui.community.CommunityActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".PrivateChatActivity"
+            android:name=".ui.chat.PrivateChatActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

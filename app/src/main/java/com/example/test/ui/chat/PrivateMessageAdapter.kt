@@ -1,11 +1,11 @@
-package com.example.test
+package com.example.test.ui.chat
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test.databinding.ItemMessageReceivedBinding
 import com.example.test.databinding.ItemMessageSentBinding
-import com.example.test.model.PrivateMessage
+import com.example.test.data.model.PrivateMessage
 import java.text.SimpleDateFormat
 import java.util.Locale
 

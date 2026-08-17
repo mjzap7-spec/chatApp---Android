@@ -1,13 +1,9 @@
-package com.example.test
+package com.example.test.ui.components
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import android.widget.ImageView
-import android.content.Intent
 import android.widget.TextView
+import com.example.test.R
 import com.example.test.databinding.ActivityCameraBinding
 class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding

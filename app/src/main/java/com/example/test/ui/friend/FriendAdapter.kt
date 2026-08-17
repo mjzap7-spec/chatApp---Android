@@ -1,10 +1,10 @@
-package com.example.test
+package com.example.test.ui.friend
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.test.data.model.Friend
 import com.example.test.databinding.ItemFriendBinding
-import com.example.test.model.Friend
 
 class FriendAdapter(
     private val onFriendClick: (Friend) -> Unit

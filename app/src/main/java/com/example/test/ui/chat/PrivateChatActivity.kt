@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.test.ui.chat
 
 import android.os.Bundle
 import android.util.Log
@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.test.databinding.ActivityPrivateChatBinding
-import com.example.test.model.PrivateMessage
+import com.example.test.data.model.PrivateMessage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore

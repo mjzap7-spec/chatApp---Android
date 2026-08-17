@@ -1,21 +1,24 @@
-package com.example.test
-import android.util.Log
-import com.google.firebase.FirebaseNetworkException
-import com.google.firebase.auth.FirebaseAuthException
+package com.example.test.ui.auth
+
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test.databinding.ActivitySignUpBinding
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import es.dmoral.toasty.Toasty
+
 class SignUpActivity : AppCompatActivity(){
     private lateinit var binding: ActivitySignUpBinding
 
@@ -200,8 +203,7 @@ class SignUpActivity : AppCompatActivity(){
             "email" to email.trim().lowercase(),
             "role" to "USER",
             "createdAt" to
-                    com.google.firebase.firestore
-                        .FieldValue
+                    FieldValue
                         .serverTimestamp()
         )
 

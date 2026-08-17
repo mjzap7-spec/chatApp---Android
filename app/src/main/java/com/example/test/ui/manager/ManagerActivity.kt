@@ -1,10 +1,13 @@
-package com.example.test
+package com.example.test.ui.manager
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test.databinding.ActivityManagerBinding
+import com.example.test.ui.auth.SignInActivity
+import com.example.test.ui.community.CommunityActivity
+import com.example.test.ui.user.UserListActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import es.dmoral.toasty.Toasty

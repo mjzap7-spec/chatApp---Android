@@ -1,12 +1,12 @@
-package com.example.test
+package com.example.test.ui.community
 
-import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.test.data.model.CommunityMessage
 import com.example.test.databinding.ItemMessageReceivedBinding
 import com.example.test.databinding.ItemMessageSentBinding
-import com.example.test.model.CommunityMessage
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -195,8 +195,8 @@ class CommunityAdapter(
     }
 
     private fun showSelectedState(
-        bubble: android.view.View,
-        avatar: android.view.View,
+        bubble: View,
+        avatar: View,
         message: CommunityMessage
     ) {
         val isSelected =

@@ -1,15 +1,13 @@
-package com.example.test
+package com.example.test.ui.user
 
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.util.Patterns
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -17,12 +15,14 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.getSystemService
 import androidx.core.graphics.drawable.toDrawable
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.test.R
 import com.example.test.databinding.ActivityUserListBinding
-import com.example.test.model.User
+import com.example.test.data.model.User
+import com.example.test.ui.auth.SignInActivity
+import com.example.test.ui.chat.PrivateChatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration

@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test.databinding.ActivityFirstMainBinding
+import com.example.test.ui.auth.SignInActivity
+import com.example.test.ui.auth.SignUpActivity
 
 class FirstMainActivity : AppCompatActivity() {
 

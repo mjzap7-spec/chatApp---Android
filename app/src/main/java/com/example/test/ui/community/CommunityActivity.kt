@@ -1,41 +1,45 @@
-package com.example.test
+package com.example.test.ui.community
 
+import android.app.Dialog
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
+import android.provider.OpenableColumns
+import android.text.InputType
 import android.util.Log
+import android.view.Gravity
+import android.view.View
+import android.view.WindowManager
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.test.ui.friend.FriendAdapter
+import com.example.test.ui.chat.PrivateChatActivity
+import com.example.test.R
+import com.example.test.data.model.CommunityMessage
+import com.example.test.data.model.Friend
 import com.example.test.databinding.ActivityCommunityBinding
-import com.example.test.model.CommunityMessage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
-import es.dmoral.toasty.Toasty
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import android.app.Dialog
-import android.graphics.Color
-import android.view.Gravity
-import android.view.WindowManager
-import android.widget.Button
-import android.widget.TextView
-import androidx.core.graphics.drawable.toDrawable
 import com.google.firebase.storage.FirebaseStorage
-import android.net.Uri
-import androidx.activity.result.contract.ActivityResultContracts
-import android.provider.OpenableColumns
-import android.content.Intent
-import androidx.recyclerview.widget.RecyclerView
-import com.example.test.model.Friend
-import android.view.View
-import androidx.core.view.GravityCompat
+import es.dmoral.toasty.Toasty
 
 class CommunityActivity : AppCompatActivity() {
 
@@ -357,7 +361,7 @@ class CommunityActivity : AppCompatActivity() {
                 "senderName" to currentName,
                 "senderRole" to currentRole,
                 "createdAt" to
-                        com.google.firebase.firestore.FieldValue.serverTimestamp(),
+                        FieldValue.serverTimestamp(),
 
                 "messageType" to messageType,
                 "fileName" to fileName,
@@ -452,13 +456,13 @@ class CommunityActivity : AppCompatActivity() {
     ) {
         val selectionMode = selectedMessages.isNotEmpty()
         binding.normalToolbar.visibility =
-            if (selectionMode) { android.view.View.GONE
-            } else { android.view.View.VISIBLE }
+            if (selectionMode) { View.GONE
+            } else { View.VISIBLE }
         binding.selectionToolbar.visibility =
             if (selectionMode) {
-                android.view.View.VISIBLE
+                View.VISIBLE
             } else {
-                android.view.View.GONE
+                View.GONE
             }
 
         binding.txtSelectedCount.text = "${selectedMessages.size} selected"
@@ -473,9 +477,9 @@ class CommunityActivity : AppCompatActivity() {
                 selectionMode &&
                 allOwnedByCurrentUser
             ) {
-                android.view.View.VISIBLE
+                View.VISIBLE
             } else {
-                android.view.View.GONE
+                View.GONE
             }
     }
 
@@ -527,7 +531,7 @@ class CommunityActivity : AppCompatActivity() {
     private fun copyMessage(text: String) {
         val clipboard =
             getSystemService(
-                Context.CLIPBOARD_SERVICE
+                CLIPBOARD_SERVICE
             ) as ClipboardManager
 
         val clip =
@@ -680,8 +684,7 @@ class CommunityActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(
             this,
             object :
-                androidx.activity
-                .OnBackPressedCallback(true) {
+                OnBackPressedCallback(true) {
 
                 override fun handleOnBackPressed() {
                     when {
@@ -761,7 +764,7 @@ class CommunityActivity : AppCompatActivity() {
         val input = EditText(this)
 
         input.hint = "Friend email"
-        input.inputType = android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+        input.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
 
         AlertDialog.Builder(this)
             .setTitle("Add friend")
@@ -785,8 +788,7 @@ class CommunityActivity : AppCompatActivity() {
                                 .lowercase()
 
                         if (email.isEmpty()) {
-                            input.error =
-                                "Please enter an email"
+                            input.error = "Please enter an email"
                             return@setOnClickListener
                         }
 
@@ -877,8 +879,7 @@ class CommunityActivity : AppCompatActivity() {
                 "name" to friendName,
                 "email" to friendEmail,
                 "addedAt" to
-                        com.google.firebase.firestore
-                            .FieldValue
+                        FieldValue
                             .serverTimestamp()
             )
 
@@ -926,12 +927,11 @@ class CommunityActivity : AppCompatActivity() {
 
         val clipboard =
             getSystemService(
-                android.content.Context
-                    .CLIPBOARD_SERVICE
-            ) as android.content.ClipboardManager
+                CLIPBOARD_SERVICE
+            ) as ClipboardManager
 
         clipboard.setPrimaryClip(
-            android.content.ClipData
+            ClipData
                 .newPlainText(
                     "Community messages",
                     combinedText
@@ -973,7 +973,7 @@ class CommunityActivity : AppCompatActivity() {
             return
         }
 
-        androidx.appcompat.app.AlertDialog
+        AlertDialog
             .Builder(this)
             .setTitle("Delete messages")
             .setMessage(

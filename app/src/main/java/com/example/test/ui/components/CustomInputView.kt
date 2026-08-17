@@ -1,12 +1,12 @@
-package com.example.test
+package com.example.test.ui.components
 
 import android.content.Context
-import android.util.AttributeSet
-import android.view.LayoutInflater
-import android.widget.LinearLayout
 import android.text.InputType
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.AttributeSet
+import android.view.LayoutInflater
+import android.widget.LinearLayout
 import com.example.test.databinding.ViewCustomInputBinding
 
 class CustomInputView @JvmOverloads constructor(
