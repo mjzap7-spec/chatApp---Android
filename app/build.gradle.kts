@@ -55,6 +55,17 @@ dependencies {
     implementation("com.google.firebase:firebase-functions")
     implementation("com.google.firebase:firebase-messaging")
 
+    implementation(
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4"
+    )
+    implementation(
+        "androidx.lifecycle:lifecycle-livedata-ktx:2.8.4"
+    )
+    implementation(
+        "androidx.activity:activity-ktx:1.9.1"
+    )
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.ktx)

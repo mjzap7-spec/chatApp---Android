@@ -240,8 +240,7 @@ class CommunityActivity : AppCompatActivity() {
         val firebaseUser =
             auth.currentUser ?: return
 
-        val fileName =
-            getFileName(fileUri)
+        val fileName = getFileName(fileUri)
 
         val mimeType =
             contentResolver.getType(fileUri)

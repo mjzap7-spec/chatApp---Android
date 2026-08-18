@@ -9,18 +9,20 @@ import com.example.test.databinding.ItemUserBinding
 import com.example.test.data.model.User
 
 class UserAdapter(
-    private val currentUid: String,
-    private val currentRole: String,
-    private val onEditUserClick: (
-        User
-    ) -> Unit,
+    private var currentUid: String,
+    private var currentRole: String,
+
+    private val onEditUserClick: (User) -> Unit,
+
     private val onSaveName: (
         User,
         String
     ) -> Unit,
+
     private val onDeleteUser: (
         User
     ) -> Unit,
+
     private val onSelectionChanged: (
         Int,
         Boolean
@@ -198,22 +200,33 @@ class UserAdapter(
         return users.size
     }
 
+    fun updateCurrentUser(
+        uid: String,
+        role: String
+    ) {
+        currentUid = uid
+        currentRole = role
+
+        notifyDataSetChanged()
+    }
+
     private fun toggleSelection(user: User) {
+
         if (user.uid.isBlank()) {
             return
         }
 
-        /*
-         * Prevent the logged-in manager from
-         * selecting their own profile.
-         */
+        // Don't allow manager to select themselves
         if (user.uid == currentUid) {
             return
         }
 
         if (selectedUserIds.contains(user.uid)) {
+
             selectedUserIds.remove(user.uid)
+
         } else {
+
             selectedUserIds.add(user.uid)
         }
 

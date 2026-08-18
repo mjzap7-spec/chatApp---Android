@@ -157,8 +157,7 @@ class PrivateChatActivity : AppCompatActivity() {
                 "text" to text,
                 "senderId" to currentUid,
                 "receiverId" to otherUserId,
-                "createdAt" to
-                        FieldValue.serverTimestamp(),
+                "createdAt" to FieldValue.serverTimestamp(),
                 "edited" to false
             )
 
@@ -177,15 +176,12 @@ class PrivateChatActivity : AppCompatActivity() {
                 binding.editMessage
                     .text
                     .clear()
-
-                binding.btnSend.isEnabled =
-                    true
+                binding.btnSend.isEnabled = true
             }
             .addOnFailureListener {
                     exception ->
 
-                binding.btnSend.isEnabled =
-                    true
+                binding.btnSend.isEnabled = true
 
                 showError(
                     exception.localizedMessage
@@ -241,9 +237,7 @@ class PrivateChatActivity : AppCompatActivity() {
                             }
                             .orEmpty()
 
-                    adapter.updateMessages(
-                        messages
-                    )
+                    adapter.updateMessages(messages)
 
                     if (messages.isNotEmpty()) {
                         binding
